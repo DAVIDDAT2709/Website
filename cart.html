@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng của tôi</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <style>
+        th,
+        td {
+            padding: 5px;
+            text-align: center;
+        }
+
+        .input-number {
+            width: 50%;
+            font-size: 16px;
+            padding: 2px 6px;
+            outline: none;
+            border: 1px solid #59e1ff;
+            border-radius: 5px;
+        }
+
+        .btn-buy {
+            border: none;
+            outline: none;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 2px 6px;
+            border-radius: 5px;
+            background-color: #59e1ff;
+        }
+
+        .btn-model {
+            padding: 5px 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .model {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .model-body {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .model-body img {
+            max-width: 100px;
+            margin-bottom: 20px;
+        }
+
+        .btn-group button {
+            margin: 5px;
+            padding: 10px 15px;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .btn-group .close {
+            background: #f44336;
+            color: white;
+        }
+
+        .btn-group button[type="submit"] {
+            background: #4caf50;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div class="mobile-menu bg-second">
+        <a href="index.html" class="mb-logo">S-SNEAKER</a>
+        <span class="mb-menu-toggle" id="mb-menu-toggle">
+            <i class='bx bx-menu'></i>
+        </span>
+    </div>
+
+    <div class="header-wrapper" id="header-wrapper">
+        <span class="mb-menu-toggle mb-menu-close" id="mb-menu-close">
+            <i class='bx bx-x'></i>
+        </span>
+
+        <div class="bg-second">
+            <div class="top-header container">
+                <ul class="devided">
+                    <li><a href="#">+0123456789</a></li>
+                    <li><a href="#">s-sneaker@mail.com</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="bg-main">
+            <div class="mid-header container">
+                <a href="index.html" class="logo">S-SNEAKER</a>
+                <form class="search" method="get" action="./search.html">
+                    <input name="search" type="text" placeholder="Tìm kiếm" required>
+                    <button type="submit" style="display:inline; border:none">
+                        <i class='bx bx-search-alt'></i>
+                    </button>
+                </form>
+
+                <ul class="user-menu">
+                    <li><a href="#"><i class='bx bx-bell'></i></a></li>
+                    <li class="mega-dropdown">
+                        <a href="#"><i class='bx bx-user-circle'></i></a>
+                        <div class="mega-content">
+                            <div class="row">
+                                <div class="box">
+                                    <h3>Xin chào!</h3>
+                                    <ul>
+                                        <li><a href="user-profile.html">Trang cá nhân</a></li>
+                                        <li><a href="cart-status.html">Đơn hàng</a></li>
+                                        <li><a href="logout.html">Đăng Xuất</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="./cart.html"><i class='bx bx-cart'></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="bg-second">
+            <div class="bottom-header container">
+                <ul class="main-menu">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li class="mega-dropdown">
+                        <a href="index.html">Danh mục<i class='bx bxs-chevron-down'></i></a>
+                        <div class="mega-content">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="box">
+                                        <ul>
+                                            <li><a href="./products.html?type=shoes">Giày</a></li>
+                                            <li><a href="./products.html?type=accessories">Phụ kiện</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- End of Header Section -->
+
+    <!-- Nội dung giỏ hàng -->
+    <div class="bg-main">
+        <div class="container">
+            <div class="box">
+                <div class="breadcumb">
+                    <a href="index.html">Trang chủ</a>
+                    <span><i class='bx bxs-chevrons-right'></i></span>
+                    <a href="#">Giỏ hàng của tôi</a>
+                </div>
+            </div>
+
+            <div class="box" style="padding: 0 40px">
+                <div class="product-info">
+                    <!-- Trường hợp không có sản phẩm -->
+                    <p style="font-size: 20px; text-align: center;">
+                        Giỏ hàng của bạn trống. Mua ngay <a style="color: blue; text-decoration: underline" href="./products.html">tại đây</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Kết thúc nội dung -->
+
+    <!-- Footer Section -->
+    <footer class="bg-second">
+        <div class="container">
+            <div class="row center">
+                <div class="col-5 col-md-6">
+                    <h3 class="footer-head">Thông tin liên hệ</h3>
+                    <ul style="text-transform:none" class="menu">
+                        <li><a href="#">Thành phố Hồ Chí Minh</a></li>
+                        <li><a href="#">0123456789</a></li>
+                        <li><a href="#">shoeshop@gmail.com</a></li>
+                        <li>
+                            <i class="fa-brands fa-facebook" style="color: #003899;"></i>
+                            <i class="fa-brands fa-instagram" style="color: #e1306c;"></i>
+                            <i class="fa-brands fa-youtube" style="color: #ff0000;"></i>
+                            <i class="fa-brands fa-twitter" style="color: #1da1f2;"></i>
+                            <i class="fa-brands fa-facebook-messenger" style="color: #003899;"></i>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-2 col-md-6 col-sm-12">
+                    <div class="contact">
+                        <h2 style="font-size:2.1rem" class="contact-header">S-SNEAKER</h2>
+                        <ul style="padding-left: 0rem" class="contact-socials">
+                            <li><a href="#">
+                                <i class='bx bxl-facebook-circle'></i>
+                            </a></li>
+                            <li><a href="#">
+                                <i class='bx bxl-instagram-alt'></i>
+                            </a></li>
+                            <li><a href="#">
+                                <i class='bx bxl-youtube'></i>
+                            </a></li>
+                            <li><a href="#">
+                                <i class='bx bxl-twitter'></i>
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer Section -->
+
+    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Xử lý số lượng sản phẩm và hiển thị modal nếu cần
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đánh giá sản phẩm</title>
+  <link rel="stylesheet" href="./assets/css/vote.css">
+</head>
+
+<body>
+  <!-- product-detail content -->
+  <div class="bg-main">
+    <div class="container">
+      <div class="box">
+        <div class="breadcumb">
+          <a href="/">Trang chủ</a>
+          <span><i class='bx bxs-chevrons-right'></i></span>
+          <a href="./cart.php">Giỏ hàng của tôi</a>
+          <span><i class='bx bxs-chevrons-right'></i></span>
+          <a href="./cart-status.php">Giỏ hàng đã mua</a>
+          <span><i class='bx bxs-chevrons-right'></i></span>
+          <a href="#">Đánh giá</a>
+        </div>
+      </div>
+
+      <div class="box" style="padding: 0 40px">
+        <div class="product-info">
+          <!-- Mô phỏng trường hợp chưa thể đánh giá -->
+          <p style="font-size: 20px; text-align: center;">
+            Mặt hàng này chưa thể vote <a style="color: blue; text-decoration: underline" href="./cart-status.php">Trở lại</a>
+          </p>
+          
+          <!-- Mô phỏng thông tin sản phẩm -->
+          <div class="box" style="padding: 0 100px">
+            <div class="product-info">
+              <h1>Sản phẩm A</h1>
+              <p class="product-description">
+                Mô tả ngắn gọn về sản phẩm A.
+              </p>
+            </div>
+            <br>
+            <div class="product-img" id="product-img">
+              <img src="./images/product-a.jpg" alt="Product A">
+            </div>
+            <br>
+            <div class="product-detail-description">
+              Mô tả chi tiết về sản phẩm A.
+            </div>
+          </div>
+
+          <!-- Đánh giá sản phẩm -->
+          <form class="form-vote" method="post" action="./functions/ordercode.html">
+            <div class="rate-form">
+              <input type="hidden" name="rate" value="true">
+              <input type="hidden" name="id" value="1">
+              <fieldset class="rating">
+                <input type="radio" id="star5" name="rating" value="5" checked /><label class="full" for="star5" title="Awesome - 5 stars"></label>
+                <input type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label>
+                <input type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label>
+                <input type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+                <input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>
+              </fieldset>
+            </div>
+            <br>
+            <div class="comment">
+              <textarea name="comment">Đánh giá của tôi về sản phẩm này...</textarea>
+            </div>
+            <br>
+            <div class="comment">
+              <button class="btn-vote">
+                Đánh giá
+              </button>
+            </div>
+          </form>
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end product-detail content -->
+
+  <!-- footer -->
+  <footer>
+    <p>&copy; 2024 Công ty XYZ</p>
+  </footer>
+
+  <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/index.js"></script>
+</body>
+
+</html>

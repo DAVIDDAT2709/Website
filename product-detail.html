@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi tiết sản phẩm</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons/css/boxicons.min.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <!-- Thay thế với header tĩnh -->
+      <a href="index.html">Trang chủ</a>
+      <a href="products.html">Sản phẩm</a>
+    </nav>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="bg-main">
+    <div class="container">
+      <div class="box">
+        <div class="breadcumb">
+          <a href="index.html">Trang chủ</a>
+          <span><i class='bx bxs-chevrons-right'></i></span>
+          <a href="products.html">Tất cả sản phẩm</a>
+          <span><i class='bx bxs-chevrons-right'></i></span>
+          <a href="#">Tên sản phẩm</a>
+        </div>
+      </div>
+
+      <!-- Product Details -->
+      <div class="row product-row">
+        <div class="col-5 col-md-12">
+          <div class="product-img" id="product-img">
+            <img src="images/sample-product.jpg" alt="Sản phẩm">
+          </div>
+          <div class="box">
+            <div class="product-img-list">
+              <div class="product-img-item">
+                <img src="images/sample-product.jpg" alt="Sản phẩm">
+              </div>
+              <div class="product-img-item">
+                <img src="images/sample-product.jpg" alt="Sản phẩm">
+              </div>
+              <div class="product-img-item">
+                <img src="images/sample-product.jpg" alt="Sản phẩm">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-7 col-md-12">
+          <div class="product-info">
+            <h1>Tên sản phẩm</h1>
+            <div class="product-info-detail">
+              <span class="product-info-detail-title">Danh mục:</span>
+              <a href="#">Tên danh mục</a>
+            </div>
+            <div class="product-info-detail">
+              <span class="product-info-detail-title">Còn:</span>
+              <a>10</a><span class="product-info-detail-title"> sản phẩm</span>
+            </div>
+            <div class="product-info-detail">
+              <span class="product-info-detail-title">Đánh giá:</span>
+              <span class="rating">
+                4.5 <i class='bx bxs-star'></i>
+              </span>
+            </div>
+            <h3>Đặc điểm nổi bật</h3>
+            <p class="product-description">
+              Mô tả ngắn gọn về sản phẩm.
+            </p>
+            <div class="product-info-price">1,200,000đ</div>
+            <div class="product-quantity-wrapper">
+              <span class="product-quantity-btn" onclick="QualityChange('down')">
+                <i class='bx bx-minus'></i>
+              </span>
+              <input type="number" class="product-quantity" id="quantity-show" value="1" min="1" oninput="QualityInputChange()">
+              <span class="product-quantity-btn" onclick="QualityChange('up')">
+                <i class='bx bx-plus'></i>
+              </span>
+            </div>
+            <form>
+              <button type="button" class="btn-flat btn-hover">Thêm vào giỏ hàng</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mô tả -->
+      <div class="box">
+        <div class="box-header">Mô tả</div>
+        <div class="product-detail-description">
+          <p>
+            Đây là phần mô tả chi tiết sản phẩm.
+          </p>
+        </div>
+      </div>
+
+      <!-- Đánh giá -->
+      <div class="box">
+        <div class="box-header">Đánh giá</div>
+        <div>
+          <div class="user-rate">
+            <div class="user-info">
+              <div class="user-avt">
+                <img src="images/user.png" alt="Người dùng">
+              </div>
+              <div class="user-name">
+                <span class="name">Nguyễn Văn A</span>
+                <span class="rating">
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star-half'></i>
+                </span>
+              </div>
+            </div>
+            <div class="user-rate-content">
+              Sản phẩm tuyệt vời, chất lượng tốt.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2023 Website bán hàng</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/index.js"></script>
+  <script>
+    let quantity = 1;
+    const QualityShower = document.getElementById('quantity-show');
+
+    function QualityChange(type) {
+      if (type === 'up') {
+        quantity++;
+      } else {
+        quantity = Math.max(1, quantity - 1);
+      }
+      QualityShower.value = quantity;
+    }
+
+    function QualityInputChange() {
+      quantity = Math.max(1, parseInt(QualityShower.value) || 1);
+    }
+  </script>
+</body>
+
+</html>

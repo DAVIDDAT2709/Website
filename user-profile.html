@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thông tin cá nhân</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="row p-4">
+      <div class="col-md-4">
+        <h1>Thông tin cá nhân</h1>
+      </div>
+      <div class="col-md-5">
+        <form action="./functions/authcode.html" method="POST">
+          <label class="mb-0" for=""><b>Họ và tên</b></label>
+          <input class="form-control" required type="text" name="name" value="Nguyễn Văn A"><br>
+          <label class="mb-0" for=""><b>Email</b></label>
+          <input class="form-control" required type="text" name="email" value="nguyenvana@example.com"><br>
+          <label class="mb-0" for=""><b>Số điện thoại</b></label>
+          <input class="form-control" required type="text" name="phone" value="0123456789"><br>
+          <label class="mb-0" for=""><b>Địa chỉ</b></label>
+          <input class="form-control" required type="text" name="address" value="123 Đường ABC, Quận 1, TP.HCM"><br>
+          <label class="mb-0" for=""><b>Mật khẩu</b></label>
+          <input class="form-control" type="password" name="password"><br>
+          <label class="mb-0" for=""><b>Xác nhận mật khẩu</b></label>
+          <input class="form-control" type="password" name="cpassword"><br>
+          <input type="hidden" name="update_user_btn" value="true">
+          <button type="submit" class="btn btn-primary">Lưu</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    let message = "Cập nhật thông tin thành công";  
+    if (message) {
+      alertify.set('notifier', 'position', 'top-right');
+      alertify.success(message);
+    }
+  </script>
+</body>
+
+</html>
