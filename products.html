@@ -1,248 +1,192 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sản phẩm</title>
-  <link rel="stylesheet" href="./assets/css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách sản phẩm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container-fluid {
+            max-width: 1200px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            background: #007bff;
+            color: #fff;
+            padding: 15px;
+        }
+
+        .card-header h4 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .card-body {
+            padding: 15px;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 0;
+        }
+
+        .table th, .table td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        .table th {
+            background: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+
+        .table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .btn {
+            padding: 5px 10px;
+            font-size: 0.875em;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-secondary {
+            color: #6c757d;
+        }
+
+        .font-weight-bold {
+            font-weight: bold;
+        }
+    </style>
 </head>
-
 <body>
-  <!-- Header -->
-  <div class="mobile-menu bg-second">
-    <a href="index.html" class="mb-logo">S-SNEAKER</a>
-    <span class="mb-menu-toggle" id="mb-menu-toggle">
-      <i class='bx bx-menu'></i>
-    </span>
-  </div>
-
-  <div class="header-wrapper" id="header-wrapper">
-    <span class="mb-menu-toggle mb-menu-close" id="mb-menu-close">
-      <i class='bx bx-x'></i>
-    </span>
-
-    <div class="bg-second">
-      <div class="top-header container">
-        <ul class="devided">
-          <li>
-            <a href="#">+0123456789</a>
-          </li>
-          <li>
-            <a href="#">s-sneaker@mail.com</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="bg-main">
-      <div class="mid-header container">
-        <a href="index.html" class="logo">S-SNEAKER</a>
-        <form class="search" method="get" action="./products.html">
-          <input name="search" type="text" placeholder="Tìm kiếm">
-          <button type="submit" style="display:inline; border:none">
-            <i class='bx bx-search-alt'></i>
-          </button>
-        </form>
-
-        <ul class="user-menu">
-          <li><a href="#"><i class='bx bx-bell'></i></a></li>
-          <li class="mega-dropdown">
-            <a href="#"><i class='bx bx-user-circle'></i></a>
-            <div class="mega-content">
-              <div class="row">
-                <div class="box">
-                  <h3>Xin chào!</h3>
-                  <ul>
-                    <li><a href="user-profile.html">Trang cá nhân</a></li>
-                    <li><a href="cart-status.html">Đơn hàng</a></li>
-                    <li><a href="logout.html">Đăng Xuất</a></li>
-                  </ul>
-                </div>
-              </div>
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header">
+                <h4>Danh sách sản phẩm</h4>
             </div>
-          </li>
-          <li><a href="./cart.html"><i class='bx bx-cart'></i></a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="bg-second">
-      <div class="bottom-header container">
-        <ul class="main-menu">
-          <li><a href="index.html">Trang chủ</a></li>
-          <li class="mega-dropdown">
-            <a href="#">Danh mục<i class='bx bxs-chevron-down'></i></a>
-            <div class="mega-content">
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="box">
-                    <ul>
-                      <li><a href="./products.html?type=shoes">Giày</a></li>
-                      <li><a href="./products.html?type=accessories">Phụ kiện</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+            <div class="card-body">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Mã</th>
+                            <th>Tên</th>
+                            <th>Hình ảnh</th>
+                            <th>Trạng thái</th>
+                            <th>Chỉnh sửa</th>
+                            <th>Xóa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dữ liệu sản phẩm mẫu -->
+                        <tr>
+                            <td>1</td>
+                            <td>Sản phẩm A</td>
+                            <td>
+                                <img src="images/product-a.jpg" width="50px" height="50px" alt="Sản phẩm A">
+                            </td>
+                            <td>Hoạt động</td>
+                            <td>
+                                <a href="edit-product.html?id=1" class="btn btn-primary">Sửa</a>
+                            </td>
+                            <td>
+                                <form action="delete-product.html" method="POST">
+                                    <input type="hidden" name="product_id" value="1">
+                                    <button type="submit" class="btn btn-danger">Xóa</button>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Sản phẩm B</td>
+                            <td>
+                                <img src="images/product-b.jpg" width="50px" height="50px" alt="Sản phẩm B">
+                            </td>
+                            <td>Tạm ẩn</td>
+                            <td>
+                                <a href="edit-product.html?id=2" class="btn btn-primary">Sửa</a>
+                            </td>
+                            <td>
+                                <form action="delete-product.html" method="POST">
+                                    <input type="hidden" name="product_id" value="2">
+                                    <button type="submit" class="btn btn-danger">Xóa</button>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Sản phẩm C</td>
+                            <td>
+                                <img src="images/product-c.jpg" width="50px" height="50px" alt="Sản phẩm C">
+                            </td>
+                            <td>Hoạt động</td>
+                            <td>
+                                <a href="edit-product.html?id=3" class="btn btn-primary">Sửa</a>
+                            </td>
+                            <td>
+                                <form action="delete-product.html" method="POST">
+                                    <input type="hidden" name="product_id" value="3">
+                                    <button type="submit" class="btn btn-danger">Xóa</button>
+                                </form>
+                            </td>
+                        </tr>
+                        <!-- Thêm các sản phẩm khác nếu cần -->
+                    </tbody>
+                </table>
             </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <!-- End of Header Section -->
-
-  <!-- Products content -->
-  <div class="bg-main">
-    <div class="container">
-      <div class="box">
-        <div class="breadcumb">
-          <a href="index.html">Trang chủ</a>
-          <span>&gt;</span>
-          <a href="products.html">Tất cả sản phẩm</a>
         </div>
-      </div>
-
-      <div class="box">
-        <div class="row">
-          <!-- Filter column -->
-          <div class="col-3 filter-col">
-            <div class="box filter-toggle-box">
-              <button class="btn-flat btn-hover">Đóng</button>
-            </div>
-            <div class="box">
-              <span class="filter-header">Danh mục</span>
-              <ul class="filter-list">
-                <li><a href="products.html?type=category1">Danh mục 1</a></li>
-                <li><a href="products.html?type=category2">Danh mục 2</a></li>
-                <li><a href="products.html?type=category3">Danh mục 3</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Products column -->
-          <div class="col-9 col-md-12">
-            <div class="box">
-              <div class="row" id="products">
-                <!-- Product 1 -->
-                <div class="col-4 col-md-6 col-sm-12">
-                  <div class="product-card">
-                    <div class="product-card-img">
-                      <img src="images/product1.jpg" alt="Sản phẩm 1">
-                      <img src="images/product1-alt.jpg" alt="Sản phẩm 1">
-                    </div>
-                    <div class="product-card-info">
-                      <div class="product-btn">
-                        <a href="product-detail.html?slug=product1" class="btn-flat btn-hover">Mua ngay</a>
-                      </div>
-                      <div class="product-card-name">Sản phẩm 1</div>
-                      <div class="product-card-price">
-                        <span><del>1,500,000đ</del></span>
-                        <span class="curr-price">1,200,000đ</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Product 2 -->
-                <div class="col-4 col-md-6 col-sm-12">
-                  <div class="product-card">
-                    <div class="product-card-img">
-                      <img src="./images/product2.webp" alt="Sản phẩm 2">
-                      <img src="./images/product2-alt.webp" alt="Sản phẩm 2">
-                    </div>
-                    <div class="product-card-info">
-                      <div class="product-btn">
-                        <a href="product-detail.html?slug=product2" class="btn-flat btn-hover">Mua ngay</a>
-                      </div>
-                      <div class="product-card-name">Sản phẩm 2</div>
-                      <div class="product-card-price">
-                        <span><del>2,000,000đ</del></span>
-                        <span class="curr-price">1,800,000đ</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Product 3 -->
-                <div class="col-4 col-md-6 col-sm-12">
-                  <div class="product-card">
-                    <div class="product-card-img">
-                      <img src="./images/product3.webp" alt="Sản phẩm 3">
-                      <img src="./images/product3-alt.webp" alt="Sản phẩm 3">
-                    </div>
-                    <div class="product-card-info">
-                      <div class="product-btn">
-                        <a href="product-detail.html?slug=product3" class="btn-flat btn-hover">Mua ngay</a>
-                      </div>
-                      <div class="product-card-name">Sản phẩm 3</div>
-                      <div class="product-card-price">
-                        <span><del>3,500,000đ</del></span>
-                        <span class="curr-price">3,000,000đ</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Pagination -->
-            <div class="box">
-              <ul class="pagination">
-                <li><a class="active" href="products.html?page=1">1</a></li>
-                <li><a href="product-page2.html">2</a></li>
-                <li><a href="products.html?page=3">3</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="bg-second">
-    <div class="container">
-      <div class="row center">
-        <div class="col-5 col-md-6">
-          <h3 class="footer-head">Thông tin liên hệ</h3>
-          <ul style="text-transform:none" class="menu">
-            <li><a href="#">Thành phố Hồ Chí Minh</a></li>
-            <li><a href="#">0123456789</a></li>
-            <li><a href="#">shoeshop@gmail.com</a></li>
-            <li>
-              <i class="fa-brands fa-facebook" style="color: #003899;"></i>
-              <i class="fa-brands fa-instagram" style="color: #e1306c;"></i>
-              <i class="fa-brands fa-youtube" style="color: #ff0000;"></i>
-              <i class="fa-brands fa-twitter" style="color: #1da1f2;"></i>
-              <i class="fa-brands fa-facebook-messenger" style="color: #003899;"></i>
-            </li>
-          </ul>
-        </div>
-        <div class="col-2 col-md-6 col-sm-12">
-          <div class="contact">
-            <h2 style="font-size:2.1rem" class="contact-header">S-SNEAKER</h2>
-            <ul style="padding-left: 0rem" class="contact-socials">
-              <li><a href="#">
-                  <i class='bx bxl-facebook-circle'></i>
-                </a></li>
-              <li><a href="#">
-                  <i class='bx bxl-instagram-alt'></i>
-                </a></li>
-              <li><a href="#">
-                  <i class='bx bxl-youtube'></i>
-                </a></li>
-              <li><a href="#">
-                  <i class='bx bxl-twitter'></i>
-                </a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- End Footer Section -->
-
 </body>
-
 </html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách đơn hàng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container-fluid {
+            max-width: 1200px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            background: #007bff;
+            color: #fff;
+            padding: 15px;
+        }
+
+        .card-header h6 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .card-body {
+            padding: 15px;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 0;
+        }
+
+        .table th, .table td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        .table th {
+            background: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+
+        .table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .badge {
+            padding: 5px 10px;
+            font-size: 0.875em;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .bg-gradient-secondary { background-color: #6c757d; color: white; }
+        .bg-gradient-primary { background-color: #007bff; color: white; }
+        .bg-gradient-warning { background-color: #ffc107; color: white; }
+        .bg-gradient-info { background-color: #17a2b8; color: white; }
+        .bg-gradient-success { background-color: #28a745; color: white; }
+        .bg-gradient-danger { background-color: #dc3545; color: white; }
+
+        .text-xs {
+            font-size: 0.75rem;
+        }
+
+        .text-secondary {
+            color: #6c757d;
+        }
+
+        .font-weight-bold {
+            font-weight: bold;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card my-4">
+                    <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                        <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                            <h6 class="text-white text-capitalize ps-3">Danh sách đơn hàng</h6>
+                        </div>
+                    </div>
+                    <div class="card-body px-0 pb-2">
+                        <div class="table-responsive p-0">
+                            <a href='./order.html' style="margin-left: 20px"><span class="badge bg-gradient-secondary">Tất cả</span></a>
+                            <a href='./order.html?type=2' style="margin-left: 20px"><span class="badge bg-gradient-primary">Trả sau</span></a>
+                            <a href='./order.html?type=5' style="margin-left: 20px"><span class="badge bg-gradient-warning">Trả online</span></a>
+                            <a href='./order.html?type=3' style="margin-left: 20px"><span class="badge bg-gradient-info">Đang giao</span></a>
+                            <a href='./order.html?type=4' style="margin-left: 20px"><span class="badge bg-gradient-success">Hoàn thành</span></a>
+                            <a href='./order.html?type=6' style="margin-left: 20px"><span class="badge bg-gradient-danger">Hủy đơn</span></a>
+                            <table class="table align-items-center mb-0">
+                                <thead>
+                                    <tr>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Mã</th>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Khách hàng</th>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Chi tiết</th>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Địa chỉ</th>
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Trạng thái</th>
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Thời gian</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Dữ liệu đơn hàng mẫu -->
+                                    <tr>
+                                        <td>
+                                            <p class="text-xs font-weight-bold mb-0">&nbsp &nbsp #12345</p>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex px-2 py-1">
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="mb-0 text-sm">Nguyễn Văn A</h6>
+                                                    <p class="text-xs text-secondary mb-0">nguyenvana@example.com</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p class="text-xs font-weight-bold mb-0">
+                                                <a href="./order-detail.html?id_order=12345">Chi tiết</a>
+                                            </p>
+                                            <p class="text-xs text-secondary mb-0">Số lượng: 3</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-xs font-weight-bold mb-0">Số 123, Đường ABC</p>
+                                            <p class="text-xs text-secondary mb-0">0901234567</p>
+                                        </td>
+                                        <td class="align-middle text-center text-sm">
+                                            <span class="badge bg-gradient-primary">Trả sau</span>
+                                        </td>
+                                        <td class="align-middle text-center">
+                                            <span class="text-secondary text-xs font-weight-bold">
+                                                08-12-2024
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p class="text-xs font-weight-bold mb-0">&nbsp &nbsp #12346</p>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex px-2 py-1">
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="mb-0 text-sm">Trần Thị B</h6>
+                                                    <p class="text-xs text-secondary mb-0">tranb@example.com</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p class="text-xs font-weight-bold mb-0">
+                                                <a href="./order-detail.html?id_order=12346">Chi tiết</a>
+                                            </p>
+                                            <p class="text-xs text-secondary mb-0">Số lượng: 2</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-xs font-weight-bold mb-0">Số 456, Đường XYZ</p>
+                                            <p class="text-xs text-secondary mb-0">0912345678</p>
+                                        </td>
+                                        <td class="align-middle text-center text-sm">
+                                            <span class="badge bg-gradient-info">Đang giao</span>
+                                        </td>
+                                        <td class="align-middle text-center">
+                                            <span class="text-secondary text-xs font-weight-bold">
+                                                07-12-2024
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <!-- Thêm các đơn hàng khác nếu cần -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

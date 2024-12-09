@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm danh mục</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Thêm danh mục</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="code.html" method="POST" enctype="multipart/form-data">
+                            <div class="row">
+                                <!-- Tên danh mục -->
+                                <div class="col-md-12">
+                                    <label for=""><b>Tên</b></label>
+                                    <input type="text" id="full-name" required name="name" placeholder="Nhập tên danh mục" class="form-control">
+                                </div>
+
+                                <!-- Slug -->
+                                <div class="col-md-12">
+                                    <br>
+                                    <label for=""><b>Slug</b></label>
+                                    <input type="text" id="slug-name" required name="slug" placeholder="Nhập slug" class="form-control">
+                                </div>
+
+                                <!-- Mô tả -->
+                                <div class="col-md-12">
+                                    <br>
+                                    <label for=""><b>Mô tả</b></label>
+                                    <input type="text" required name="description" placeholder="Nhập mô tả" class="form-control">
+                                </div>
+
+                                <!-- Hình ảnh -->
+                                <div class="col-md-12">
+                                    <br>
+                                    <label for=""><b>Hình ảnh</b></label>
+                                    <input type="file" required name="image" class="form-control">
+                                </div>
+
+                                <!-- Trạng thái -->
+                                <div class="col-md-6">
+                                    <br>
+                                    <label for=""><b>Trạng thái</b></label>
+                                    <input type="checkbox" name="status">
+                                </div>
+
+                                <!-- Nút Hoàn thành -->
+                                <div class="col-md-12">
+                                    <br>
+                                    <button type="submit" class="btn btn-primary" name="add_category_btn">Hoàn thành</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="./assets/js/StringConvertToSlug.js"></script>
+</body>
+
+</html>

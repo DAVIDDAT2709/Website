@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chỉnh sửa sản phẩm</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Chỉnh sửa sản phẩm
+                            <a href="products.html" class="btn btn-primary float-end">Trở về</a>
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="code.html" method="POST" enctype="multipart/form-data">
+                            <div class="row">
+                                <!-- Danh mục -->
+                                <div class="col-md-12">
+                                    <label class="mb-0"><b>Danh mục</b></label>
+                                    <select name="category_id" class="form-select mb-2">
+                                        <option selected>Chọn danh mục</option>
+                                        <option value="1" selected>Danh mục 1</option>
+                                        <option value="2">Danh mục 2</option>
+                                        <option value="3">Danh mục 3</option>
+                                    </select>
+                                </div>
+
+                                <!-- Tên sản phẩm -->
+                                <div class="col-md-6">
+                                    <input type="hidden" name="product_id" value="1">
+                                    <br>
+                                    <label class="mb-0"><b>Tên</b></label>
+                                    <input type="text" required name="name" value="Sản phẩm A" placeholder="Nhập tên sản phẩm" class="form-control mb-2">
+                                </div>
+
+                                <!-- Slug -->
+                                <div class="col-md-6">
+                                    <br>
+                                    <label class="mb-0"><b>Slug</b></label>
+                                    <input type="text" required name="slug" value="san-pham-a" placeholder="Nhập slug" class="form-control mb-2">
+                                </div>
+
+                                <!-- Mô tả chi tiết -->
+                                <div class="col-md-12">
+                                    <br>
+                                    <label class="mb-0"><b>Mô tả chi tiết</b></label>
+                                    <textarea required name="small_description" placeholder="Nhập mô tả chi tiết" class="form-control mb-2">Mô tả chi tiết của sản phẩm.</textarea>
+                                </div>
+
+                                <!-- Mô tả tổng quan -->
+                                <div class="col-md-12">
+                                    <br>
+                                    <label class="mb-0"><b>Mô tả tổng quan</b></label>
+                                    <textarea required name="description" placeholder="Nhập mô tả tổng quan" class="form-control mb-2">Mô tả tổng quan về sản phẩm.</textarea>
+                                </div>
+
+                                <!-- Giá -->
+                                <div class="col-md-6">
+                                    <br>
+                                    <label class="mb-0"><b>Giá gốc</b></label>
+                                    <input type="text" required name="original_price" value="500000" placeholder="Nhập giá gốc" class="form-control mb-2">
+                                </div>
+                                <div class="col-md-6">
+                                    <br>
+                                    <label class="mb-0"><b>Giá giảm</b></label>
+                                    <input type="text" required name="selling_price" value="400000" placeholder="Nhập giá giảm" class="form-control mb-2">
+                                </div>
+
+                                <!-- Hình ảnh -->
+                                <div class="col-md-12">
+                                    <br>
+                                    <label class="mb-0"><b>Hình ảnh</b></label>
+                                    <input type="file" name="image" class="form-control mb-2">
+                                    <label>Ảnh hiện tại</label>
+                                    <img src="../images/product-image.jpg" height="50px" width="50px" alt="Ảnh sản phẩm">
+                                </div>
+
+                                <!-- Số lượng -->
+                                <div class="col-md-6">
+                                    <br>
+                                    <label class="mb-0"><b>Số lượng</b></label>
+                                    <input type="number" required name="qty" value="10" placeholder="Nhập số lượng" class="form-control mb-2">
+                                </div>
+
+                                <!-- Trạng thái -->
+                                <div class="col-md-6">
+                                    <br>
+                                    <br>
+                                    <label class="mb-0"><b>Trạng thái</b></label>
+                                    <input type="checkbox" name="status" checked>
+                                </div>
+
+                                <!-- Nút submit -->
+                                <div class="col-md-12">
+                                    <br>
+                                    <button type="submit" class="btn btn-primary" name="update_product_btn">Hoàn thành</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript" src="./assets/js/StringConvertToSlug.js"></script>
+
+</html>

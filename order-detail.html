@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết đơn hàng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container-fluid {
+            max-width: 1200px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            background: #007bff;
+            color: #fff;
+            padding: 15px;
+        }
+
+        .card-header h6 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 0;
+        }
+
+        .table th, .table td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        .table th {
+            background: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+
+        .table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .badge {
+            padding: 5px 10px;
+            font-size: 0.875em;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .bg-gradient-primary { background-color: #007bff; color: white; }
+        .bg-gradient-info { background-color: #17a2b8; color: white; }
+        .bg-gradient-success { background-color: #28a745; color: white; }
+        .bg-gradient-warning { background-color: #ffc107; color: white; }
+        .bg-gradient-danger { background-color: #dc3545; color: white; }
+
+        .text-xs {
+            font-size: 0.75rem;
+        }
+
+        .text-secondary {
+            color: #6c757d;
+        }
+
+        .font-weight-bold {
+            font-weight: bold;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        img.avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card my-4">
+                    <div class="card-header">
+                        <h6>Chi tiết đơn hàng</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <div style="padding-left: 20px">
+                                <!-- Thông tin khách hàng -->
+                                <p>Họ và tên: __________________________</p>
+                                <p>Số điện thoại: __________________________</p>
+                                <p>Email: __________________________</p>
+                                <p>Địa chỉ: __________________________</p>
+                                <p>Trạng thái: <span class="badge bg-gradient-primary">______________</span></p>
+                                <p>
+                                    Chuyển sang: 
+                                    <a href="#"><span class="badge bg-gradient-info">______________</span></a>
+                                    hoặc: 
+                                    <a href="#"><span class="badge bg-gradient-danger">______________</span></a>
+                                </p>
+                            </div>
+
+                            <!-- Danh sách sản phẩm -->
+                            <table class="table align-items-center">
+                                <thead>
+                                    <tr>
+                                        <th>Danh sách sản phẩm</th>
+                                        <th>Thông tin</th>
+                                        <th>Thời gian đặt</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="../images/placeholder.jpg" class="avatar me-3" alt="Product Placeholder">
+                                                <div>
+                                                    <h6 class="mb-0">__________________</h6>
+                                                    <p class="text-xs text-secondary">Đơn giá: _____________</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p class="text-xs font-weight-bold mb-0">Tổng giá: _____________</p>
+                                            <p class="text-xs text-secondary">Số lượng: _____________</p>
+                                        </td>
+                                        <td>
+                                            <span class="text-secondary text-xs font-weight-bold">______________</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <!-- Tổng thanh toán -->
+                            <div style="padding-left: 20px">
+                                <h2>Tổng thanh toán: _____________</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

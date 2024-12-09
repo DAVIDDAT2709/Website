@@ -1,336 +1,216 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S-SNEAKER</title>
+    <title>Quản lý doanh thu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
-    <link rel="stylesheet" href="./assets/css/grid.css">
-    <link rel="stylesheet" href="./assets/css/styles.css">
-    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #044C94;
+            margin-bottom: 15px;
+        }
+
+        .filter-section {
+            margin-bottom: 15px;
+        }
+
+        label {
+            margin-right: 10px;
+        }
+
+        select {
+            padding: 5px;
+            margin-right: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .revenue-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .revenue-table th,
+        .revenue-table td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        .revenue-table th {
+            background-color: #044C94;
+            color: white;
+        }
+
+        .revenue-table td {
+            background-color: #f9f9f9;
+        }
+
+        .revenue-table tr:nth-child(even) td {
+            background-color: #f1f1f1;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h4 {
+            margin: 10px 0 5px;
+            font-size: 1.5em;
+        }
+
+        .card p {
+            margin: 5px 0;
+            font-size: 1em;
+            color: #666;
+        }
+
+        .icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
-
 <body>
-    <!-- Header Section -->
-    <div class="mobile-menu bg-second">
-        <a href="#" class="mb-logo">S-SNEAKER</a>
-        <span class="mb-menu-toggle" id="mb-menu-toggle">
-            <i class='bx bx-menu'></i>
-        </span>
-    </div>
-
-    <div class="header-wrapper" id="header-wrapper">
-        <span class="mb-menu-toggle mb-menu-close" id="mb-menu-close">
-            <i class='bx bx-x'></i>
-        </span>
-
-        <div class="bg-second">
-            <div class="top-header container">
-                <ul class="devided">
-                    <li>
-                        <a href="#">+0123456789</a>
-                    </li>
-                    <li>
-                        <a href="#">s-sneaker@mail.com</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="bg-main">
-            <div class="mid-header container">
-                <a href="index.html" class="logo">S-SNEAKER</a>
-                <form class="search" method="get" action="./search.html">
-                    <input name="search" type="text" placeholder="Tìm kiếm">
-                    <button type="submit" style="display:inline; border:none">
-                        <i class='bx bx-search-alt'></i>
-                    </button>
-                </form>
-        
-                <ul class="user-menu">
-                    <li><a href="#"><i class='bx bx-bell'></i></a></li>
-                    <li class="mega-dropdown">
-                        <a href="#"><i class='bx bx-user-circle'></i></a>
-                        <div class="mega-content">
-                            <div class="row">
-                                <div class="box">
-                                    <h3>Xin chào!</h3>
-                                    <ul>
-                                        <li><a href="user-profile.html">Trang cá nhân</a></li>
-                                        <li><a href="cart-status.html">Đơn hàng</a></li>
-                                        <li><a href="logout.html">Đăng Xuất</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li><a href="./cart.html"><i class='bx bx-cart'></i></a></li>
-                </ul>
-            </div>
-        </div>
-                    </li>
-                    <li><a href="./cart.html"><i class='bx bx-cart'></i></a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="bg-second">
-            <div class="bottom-header container">
-                <ul class="main-menu">
-                    <li><a href="index.html">Trang chủ</a></li>
-                    <li class="mega-dropdown">
-                        <a href="index.html">Danh mục<i class='bx bxs-chevron-down'></i></a>
-                        <div class="mega-content">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="box">
-                                        <ul>
-                                            <li><a href="./products.html?type=shoes">Nike</a></li>
-                                            <li><a href="./products.html?type=accessories">Balenciaga</a></li>
-                                            <li><a href="./products.html?type=accessories">Adidas</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- End of Header Section -->
-
-    <!-- Hero Section -->
-    <div class="hero">
-        <div class="slider">
-            <div class="container">
-                <!-- Slide Item -->
-                <div class="slide">
-                    <div class="info">
-                        <div class="info-content">
-                            <h2 class="top-down trans-delay-0-2">Nike Air Force 1 Da Lộn Kem Xám REP 1:1</h2>
-                            <p class="top-down trans-delay-0-4">Chất liệu: da lộn</p>
-                            <p class="top-down trans-delay-0-4">size: 37-42</p>
-                            <p class="top-down trans-delay-0-4">Miễn phí vận chuyển</p>
-                            <div class="top-down trans-delay-0-6">
-                                <a href="./product-detail.php?slug=product-1">
-                                    <button class="btn-flat btn-hover">
-                                        <span>Mua ngay</span>
-                                    </button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="img right-left">
-                        <img src="./images/product1.jpg" alt="">
-                    </div>
-                </div>
-                <!-- End Slide Item -->
-                <!-- Additional slides as needed -->
-            </div>
-            <!-- Slider Controller -->
-            <button class="slide-controll slide-next">
-                <i class='bx bxs-chevron-right'></i>
-            </button>
-            <button class="slide-controll slide-prev">
-                <i class='bx bxs-chevron-left'></i>
-            </button>
-            <!-- End Slider Controller -->
-        </div>
-    </div>
-    <!-- End Hero Section -->
-
-    <!-- Promotion Section -->
-    <div class="promotion">
+    <div class="container">
+        <!-- Tổng quan -->
         <div class="row">
-            <div class="col-4 col-md-12 col-sm-12">
-                <div class="promotion-box">
-                    <div class="text">
-                        <h3>Adidas Ultra Boost 6.0 Xám Tím REP</h3>
-                        <a href="./product-detail.php?slug=latest-product-1">
-                            <button class="btn-flat btn-hover"><span>Xem chi tiết</span></button>
-                        </a>
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="card">
+                        <div class="icon">👤</div>
+                        <p>Tổng tài khoản</p>
+                        <h4>1,234</h4>
                     </div>
-                    <img src="./images/product6.jpg" alt="">
+                    <div class="card">
+                        <div class="icon">🎁</div>
+                        <p>Tổng sản phẩm</p>
+                        <h4>567</h4>
+                    </div>
+                    <div class="card">
+                        <div class="icon">📦</div>
+                        <p>Tổng đơn hàng</p>
+                        <h4>3,456</h4>
+                    </div>
+                    <div class="card">
+                        <div class="icon">⏳</div>
+                        <p>Tổng đơn hàng đang xử lý</p>
+                        <h4>123</h4>
+                    </div>
+                    <div class="card">
+                        <div class="icon">✅</div>
+                        <p>Tổng đơn hàng thành công</p>
+                        <h4>2,890</h4>
+                    </div>
+                    <div class="card">
+                        <div class="icon">❌</div>
+                        <p>Tổng đơn hàng bị hủy</p>
+                        <h4>45</h4>
+                    </div>
+                    <div class="card">
+                        <div class="icon">💰</div>
+                        <p>Tổng doanh thu</p>
+                        <h4>1,234,567,890 Đ</h4>
+                    </div>
                 </div>
             </div>
-    
-            <div class="col-4 col-md-12 col-sm-12">
-                <div class="promotion-box">
-                    <div class="text">
-                        <h3>Nike Air Max 270 - Đen Trắng</h3>
-                        <a href="./product-detail.php?slug=latest-product-2">
-                            <button class="btn-flat btn-hover"><span>Xem chi tiết</span></button>
-                        </a>
-                    </div>
-                    <img src="./images/product7.jpg" alt="">
-                </div>
-            </div>
-    
-            <div class="col-4 col-md-12 col-sm-12">
-                <div class="promotion-box">
-                    <div class="text">
-                        <h3>Puma RS-X - Xanh Dương</h3>
-                        <a href="./product-detail.php?slug=latest-product-3">
-                            <button class="btn-flat btn-hover"><span>Xem chi tiết</span></button>
-                        </a>
-                    </div>
-                    <img src="./images/product8.jpg" alt="">
-                </div>
-            </div>
+        </div>
+
+        <!-- Doanh thu các ngày trong tháng -->
+        <div class="content">
+            <h2>Doanh thu các ngày trong tháng</h2>
+            <form method="get">
+                <label for="month">Chọn tháng:</label>
+                <select name="month" id="month">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3" selected>3</option>
+                    <!-- Các tháng khác -->
+                </select>
+                <label for="year">Chọn năm:</label>
+                <select name="year" id="year">
+                    <option value="2023">2023</option>
+                    <option value="2024" selected>2024</option>
+                </select>
+            </form>
+
+            <table class="revenue-table">
+                <thead>
+                    <tr>
+                        <th>Ngày</th>
+                        <th>Tổng doanh thu (VND)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01/03/2024</td>
+                        <td>1,234,567</td>
+                    </tr>
+                    <tr>
+                        <td>02/03/2024</td>
+                        <td>890,123</td>
+                    </tr>
+                    <!-- Dữ liệu khác -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Doanh thu theo tháng -->
+        <div class="content">
+            <h2>Thống kê doanh thu theo tháng trong năm</h2>
+            <form method="get">
+                <label for="year">Chọn năm:</label>
+                <select name="year" id="year">
+                    <option value="2023">2023</option>
+                    <option value="2024" selected>2024</option>
+                </select>
+            </form>
+
+            <table class="revenue-table">
+                <thead>
+                    <tr>
+                        <th>Tháng</th>
+                        <th>Tổng doanh thu (VND)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01</td>
+                        <td>12,345,678</td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>9,876,543</td>
+                    </tr>
+                    <!-- Dữ liệu khác -->
+                </tbody>
+            </table>
         </div>
     </div>
-    <!-- End Promotion Section -->
-
-    <!-- Product List -->
-    <div class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Những sản phẩm mới</h2>
-            </div>
-            <div class="row" id="latest-products">
-                <div class="col-3 col-md-6 col-sm-12">
-                    <div class="product-card">
-                        <div class="product-card-img">
-                            <img src="./images/latest-product1.jpg" alt="">
-                            <img src="./images/latest-product1.jpg" alt="">
-                        </div>
-                        <div class="product-card-info">
-                            <div class="product-btn">
-                                <a href="./product-detail.php?slug=latest-product-1">
-                                    <button class="btn-flat btn-hover btn-shop-now">Mua ngay</button>
-                                </a>
-                            </div>
-                            <div class="product-card-name">Latest Product 1</div>
-                            <div class="product-card-price">
-                                <span><del>1,000,000đ</del></span>
-                                <span class="curr-price">900,000đ</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Additional products as needed -->
-            </div>
-            <div class="section-footer">
-                <a href="./products.php" class="btn-flat btn-hover">Xem tất cả</a>
-            </div>
-        </div>
-    </div>
-    <!-- End Product List -->
-
-    <!-- Special Product -->
-    <div class="bg-second">
-        <div class="section container">
-            <div class="row">
-                <div class="col-4 col-md-4">
-                    <div class="sp-item-img">
-                        <img src="./images/best-selling1.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-7 col-md-8">
-                    <div class="sp-item-info">
-                        <div class="sp-item-name">Best Selling Product 1</div>
-                        <p class="sp-item-description">Short description of the best selling product.</p>
-                        <a href="./product-detail.php?slug=best-selling-product-1">
-                            <button class="btn-flat btn-hover">Xem chi tiết</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Special Product -->
-
-    <!-- Product List -->
-    <div class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Những sản phẩm bán chạy nhất</h2>
-            </div>
-            <div class="row" id="best-products">
-                <div class="col-3 col-md-6 col-sm-12">
-                    <div class="product-card">
-                        <div class="product-card-img">
-                            <img src="./images/best-selling1.jpg" alt="">
-                            <img src="./images/best-selling1.jpg" alt="">
-                        </div>
-                        <div class="product-card-info">
-                            <div class="product-btn">
-                                <a href="./product-detail.php?slug=best-selling-product-1">
-                                    <button class="btn-flat btn-hover btn-shop-now">Mua ngay</button>
-                                </a>
-                            </div>
-                            <div class="product-card-name">Best Selling Product 1</div>
-                            <div class="product-card-price">
-                                <span><del>2,000,000đ</del></span>
-                                <span class="curr-price">1,800,000đ</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Additional products as needed -->
-            </div>
-            <div class="section-footer">
-                <a href="./products.php" class="btn-flat btn-hover">Xem tất cả</a>
-            </div>
-        </div>
-    </div>
-    <!-- End Product List -->
-
-    <!-- Footer Section -->
-    <footer class="bg-second">
-        <div class="container">
-            <div class="row center">
-                <div class="col-5 col-md-6">
-                    <h3 class="footer-head">Thông tin liên hệ</h3>
-                    <ul style="text-transform:none" class="menu">
-                        <li><a href="#">Thành phố Hồ Chí Minh</a></li>
-                        <li><a href="#">0123456789</a></li>
-                        <li><a href="#">shoeshop@gmail.com</a></li>
-                        <li>
-                            <i class="fa-brands fa-facebook" style="color: #003899;"></i>
-                            <i class="fa-brands fa-instagram" style="color: #e1306c;"></i>
-                            <i class="fa-brands fa-youtube" style="color: #ff0000;"></i>
-                            <i class="fa-brands fa-twitter" style="color: #1da1f2;"></i>
-                            <i class="fa-brands fa-facebook-messenger" style="color: #003899;"></i>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-2 col-md-6 col-sm-12">
-                    <div class="contact">
-                        <h2 style="font-size:2.1rem" class="contact-header">S-SNEAKER</h2>
-                        <ul style="padding-left: 0rem" class="contact-socials">
-                            <li><a href="#">
-                                    <i class='bx bxl-facebook-circle'></i>
-                                </a></li>
-                            <li><a href="#">
-                                    <i class='bx bxl-instagram-alt'></i>
-                                </a></li>
-                            <li><a href="#">
-                                    <i class='bx bxl-youtube'></i>
-                                </a></li>
-                            <li><a href="#">
-                                    <i class='bx bxl-twitter'></i>
-                                </a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- End Footer Section -->
-
-    <script src="./assets/js/app.js"></script>
-    <script src="./assets/js/index.js"></script>
 </body>
-
 </html>
